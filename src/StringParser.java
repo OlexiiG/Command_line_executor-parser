@@ -1,8 +1,13 @@
+import java.util.List;
+
 
 public class StringParser {
-
-	public StringParser() {
-		// TODO Auto-generated constructor stub
+ List<String> response;
+ JsonParser jsp;	
+	
+	public StringParser(List<String> response, JsonParser jsp) {
+		this.response=response;
+		this.jsp=jsp;
 	}
 
 }

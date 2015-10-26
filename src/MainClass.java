@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.List;
 
 public class MainClass {
@@ -11,17 +10,20 @@ public class MainClass {
 		
 		
 		
-		os_name = getOSname();
-		JsonParser jsp = new JsonParser(configfilename, os_name);
-		console_charset=jsp.getConsoleCharset();
-		List<String> command = jsp.getCommandString();
+		os_name = getOSname();//getting current OS name
+		JsonParser jsp = new JsonParser(configfilename, os_name);//reading configuration JSON file
+		console_charset=jsp.getConsoleCharset();//getting charset for standart output console (STDOUT)
+		List<String> executeParameters = jsp.getExecuteParameters();//getting application name and command line parameters
 
-		CommandLineProcess clp = new CommandLineProcess(command);
+		CommandLineProcess clp = new CommandLineProcess(executeParameters);//preparing application to start
 		
-		List<String> response=clp.start(console_charset);
+		List<String> response=clp.start(console_charset);//starting command line application response is STDOUT
 		
-		response.forEach((a) -> System.out.println(a));
+		response.forEach((a) -> System.out.println(a));//printing application response
 		
+		
+		//parsing application response (STDOUT)
+		StringParser sp=new StringParser(response,jsp);
 
 	}
 

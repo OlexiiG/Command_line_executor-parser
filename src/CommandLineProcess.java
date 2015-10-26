@@ -14,7 +14,7 @@ public class CommandLineProcess {
 		procBuilder = new ProcessBuilder(command_params);
 	}
 
-	public List<String> start(String encoding) {
+	public List<String> start(String console_encoding) {
 
 		List<String> response = new ArrayList<String>();
 		Process process;
@@ -23,22 +23,23 @@ public class CommandLineProcess {
 
 			InputStream stdout = process.getInputStream();
 			InputStreamReader isrStdout = new InputStreamReader(stdout,
-					encoding);
+					console_encoding);
 			BufferedReader brStdout = new BufferedReader(isrStdout);
 
-			String line = null;
+			String line;
+
 			while ((line = brStdout.readLine()) != null) {
 				response.add(line);
-
 			}
-			response.add(Integer.toString(process.waitFor()));
+			
+			response.add(new String ("ERRORCODE="+Integer.toString(process.waitFor())));
 			return response;
 
 		} catch (IOException | InterruptedException e) {
 			System.out.println("Error running programm");
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
-		
+
 	}
 }
