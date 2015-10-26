@@ -1,0 +1,27 @@
+{
+    "Windows 7": {
+        "command": "netstat",
+	"charset": ""
+        "params": [
+            "-a",
+            "-b",
+            "-r",
+            "-o",
+            "-n"
+
+        ]
+    }
+
+
+"Windows 666": {
+        "command": "netstat",
+        "params": [
+            "-q",
+            "-w",
+            "-z"
+        ]
+    }
+
+
+
+}
