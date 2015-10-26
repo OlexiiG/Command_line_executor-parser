@@ -52,4 +52,9 @@ public class JsonParser {
 		return list;
 	}
 
+	public String getConsoleCharset() {
+		String charset = (String) configuration.get("charset");
+		return charset;
+	}
+
 }

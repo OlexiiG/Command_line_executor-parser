@@ -1,26 +1,29 @@
 {
-    "Windows 7": {
-        "command": "netstat",
-	"charset": ""
-        "params": [
-            "-a",
-            "-b",
-            "-r",
-            "-o",
-            "-n"
+  "Windows 7": {
+    "command": "netstat",
+    "charset": "Cp866",
+    "params": [
+      "-a",
+      "-b",
+      "-r",
+      "-o",
+      "-n"
+    ]
+  },
 
-        ]
-    }
 
+ "Windows 1024": {
+    "command": "netstat",
+    "charset": "Cp866",
+    "params": [
+      "-a",
+      "-b",
+      "-r",
+      "-o",
+      "-n"
+    ]
+  }
 
-"Windows 666": {
-        "command": "netstat",
-        "params": [
-            "-q",
-            "-w",
-            "-z"
-        ]
-    }
 
 
 
