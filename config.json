@@ -3,16 +3,30 @@
     "command": "netstat",
     "charset": "Cp866",
     "params": [
-      "-a",
-      "-b",
-      "-r",
-      "-o",
-      "-n"
-    ]
+      "-na"
+     
+    ],
+
+
+ "table1": {
+     "header signatures": [
+      
+      "Локальный адрес",
+"Имя",
+      "Внешний адрес",
+      "Состояние"
+      
+
+    ],
+     "end table signature":"ERRORCODE"
+     
+   }
+   
   },
-
-
- "Windows 1024": {
+  
+  
+  
+  "Windows 5555": {
     "command": "netstat",
     "charset": "Cp866",
     "params": [
@@ -21,10 +35,28 @@
       "-r",
       "-o",
       "-n"
-    ]
+    ],
+
+
+ "table1": {
+     "header signatures": [
+      "Сетевой адрес",
+      "Маска сети",
+      "Адрес шлюза",
+      "Интерфейс",
+      "Метрика"
+    ],
+     "end table signature":"======"
+     
+   }
+   
   }
-
-
-
+   
+    
 
 }
+   
+
+
+
+

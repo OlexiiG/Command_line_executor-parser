@@ -69,4 +69,16 @@ public class JsonParser {
 		return charset;
 	}
 
+	public List<String> gettableheader(String tablename) {	
+		JSONObject Jsontable = (JSONObject) configuration.get(tablename);
+		JSONArray Jsontableheader= (JSONArray) Jsontable.get("header signatures");
+		return JSONArrayToStringList(Jsontableheader);
+		
+	}
+
+	public String endtablesignature(String tablename) {
+		JSONObject Jsontable = (JSONObject) configuration.get(tablename);
+		return (String) Jsontable.get("end table signature");
+	}
+
 }
